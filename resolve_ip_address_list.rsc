@@ -17,7 +17,7 @@
             :local ip [:resolve $domain]
             :if ($ip != "") do={
                 # Check: the IP is exist or not
-                :local commentValue ("$ip $domain $commentToAdd")
+                :local commentValue ("$commentToAdd $domain $ip")
                 # Find the record by the $listName and the comment
                 :local addrId [/ip firewall address-list find list=$listName comment=("$commentValue")]
                 # if the record id is not exist, do adding
