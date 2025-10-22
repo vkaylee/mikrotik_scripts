@@ -1,3 +1,5 @@
+# Info
+# https://github.com/vkaylee/mikrotik_scripts/blob/main/resolve_ip_address_list.rsc
 :log info "--- Starting Final Address List Update Script (V7) ---"
 
 # === Definition
@@ -22,7 +24,7 @@
                 :if ([:len $addrId] = 0) do={
                     # Add, the record will exist in 1 day
                     /ip firewall address-list add list=$listName address=$ip timeout=$timeout comment=("$commentValue")
-                    :log info ("Added $domain -> $ip to $listName")
+                    :log info ("Added $domain -> $ip to $listName with timeout $timeout")
                 }
             }
         } on-error={
