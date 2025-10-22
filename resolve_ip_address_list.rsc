@@ -62,7 +62,10 @@ $AddResolvedIPs "chatgpt-allowed" $chatgptDomains "1d"
 $AddResolvedIPs "auth-providers-allowed" $authDomains "1d"
 
 :local googleDomains {
+    "google.com";
     "www.google.com";
+    "google.com.vn";
+    "www.google.com.vn";
     "accounts.google.com";
     "translate.google.com";
     "translate.googleapis.com";
