@@ -55,6 +55,7 @@ $AddResolvedIPs "chatgpt-allowed" $chatgptDomains "1d"
 :local authDomains {
     "login.microsoftonline.com";
     "login.live.com";
+    "accounts.google.com";
     "appleid.apple.com";
     "idmsa.apple.com"
 }
