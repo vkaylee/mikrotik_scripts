@@ -59,3 +59,18 @@ $AddResolvedIPs "chatgpt-allowed" $chatgptDomains "1d"
     "idmsa.apple.com"
 }
 $AddResolvedIPs "auth-providers-allowed" $authDomains "1d"
+
+:local googleDomains {
+    "www.google.com";
+    "accounts.google.com";
+    "translate.google.com";
+    "translate.googleapis.com";
+    "ssl.gstatic.com";
+    "fonts.gstatic.com";
+    "www.gstatic.com";
+    "csi.gstatic.com";
+    "ajax.googleapis.com";
+    "apis.google.com"
+}
+
+$AddResolvedIPs "google-allowed" $googleDomains "1d"
