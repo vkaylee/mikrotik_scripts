@@ -1,11 +1,37 @@
-:log info "--- Starting Final Address List Update Script (V6) ---"
+:log info "--- Starting Final Address List Update Script (V7) ---"
 
-# ===== é…ç½®åŒº =====
+# === Definition
 :local commentToAdd "auto"
+#===============================#
+# Change logs
+# Don't remove, just adding because the record will be removed automatically when exceeding the timeout.
+# One domain can have multiple ips
+:global AddResolvedIPs do={
+    :local listName ($1)
+    :local domainList ($2)
+    :local timeout ($3)
+    :foreach domain in=$domainList do={
+        :do {
+            :local ip [:resolve $domain]
+            :if ($ip != "") do={
+                # Check: the IP is exist or not
+                :local commentValue ("$ip $domain $commentToAdd")
+                # Find the record by the $listName and the comment
+                :local addrId [/ip firewall address-list find list=$listName comment=("$commentValue")]
+                # if the record id is not exist, do adding
+                :if ([:len $addrId] = 0) do={
+                    # Add, the record will exist in 1 day
+                    /ip firewall address-list add list=$listName address=$ip timeout=$timeout comment=("$commentValue")
+                    :log info ("Added $domain -> $ip to $listName")
+                }
+            }
+        } on-error={
+            :log warning ("Failed to resolve $domain")
+        }
+    }
+}
 
-:local chatgptListName "chatgpt-allowed"
-:local authListName "auth-providers-allowed"
-
+# Exec
 :local chatgptDomains {
     "chat.openai.com";
     "chatgpt.com";
@@ -21,6 +47,8 @@
     "stripe.com";
     "files.oaiusercontent.com"
 }
+$AddResolvedIPs "chatgpt-allowed" $chatgptDomains "1d"
+
 
 :local authDomains {
     "login.microsoftonline.com";
@@ -28,34 +56,4 @@
     "appleid.apple.com";
     "idmsa.apple.com"
 }
-
-# ===== æ‰§è¡ŒåŒº =====
-:log info "Removing old entries with comment~\"auto\"..."
-/ip firewall address-list remove [find where comment~$commentToAdd]
-
-# ===== å‡½æ•°ï¼šæ‰¹é‡è§£æžå¹¶æ·»åŠ  =====
-:global AddResolvedIPs do={
-    :local listName ($1)
-    :local domainList ($2)
-    :foreach domain in=$domainList do={
-        :do {
-            :local ip [:resolve $domain]
-            :if ($ip != "") do={
-                /ip firewall address-list add list=$listName address=$ip timeout=1d comment=("$domain $commentToAdd")
-                :log info ("Added $domain -> $ip to $listName")
-            }
-        } on-error={
-            :log warning ("Failed to resolve $domain")
-        }
-    }
-}
-
-# ===== æ·»åŠ  ChatGPT ç›¸å…³ =====
-:log info "--> Updating ChatGPT Address List..."
-$AddResolvedIPs $chatgptListName $chatgptDomains
-
-# ===== æ·»åŠ  Apple / Microsoft ç™»å½•æœåŠ¡ =====
-:log info "--> Updating Auth Provider Address List..."
-$AddResolvedIPs $authListName $authDomains
-
-:log info "--- Script Finished Successfully ---"
+$AddResolvedIPs "auth-providers-allowed" $authDomains "1d"
