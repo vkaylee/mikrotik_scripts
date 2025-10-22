@@ -74,3 +74,19 @@ $AddResolvedIPs "auth-providers-allowed" $authDomains "1d"
 }
 
 $AddResolvedIPs "google-allowed" $googleDomains "1d"
+
+:local wechatDomains {
+    "weixin.qq.com";
+    "wechat.com";
+    "web.wechat.com";
+    "login.weixin.qq.com";
+    "file.wx.qq.com";
+    "file.web.wechat.com";
+    "szmwx.qpic.cn";
+    "szmmsns.qpic.cn";
+    "mp.weixin.qq.com";
+    "res.wx.qq.com";
+    "short.weixin.qq.com"
+}
+
+$AddResolvedIPs "wechat-allowed" $wechatDomains "1d"
