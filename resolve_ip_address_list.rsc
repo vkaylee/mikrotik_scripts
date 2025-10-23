@@ -6,7 +6,7 @@
 :local commentToAdd "auto"
 #===============================#
 # Change logs
-# Don't remove, just adding because the record will be removed automatically when exceeding the timeout.
+# Don't remove, just adding because the record will be removed automatically when reaching the timeout.
 # One domain can have multiple ips
 :global AddResolvedIPs do={
     :local listName ($1)
@@ -15,6 +15,7 @@
     :foreach domain in=$domainList do={
         :do {
             :local ip [:resolve $domain]
+            :global isAdd 0
             :if ($ip != "") do={
                 # Check: the IP is exist or not
                 :local commentValue ("$commentToAdd $domain $ip")
@@ -22,6 +23,20 @@
                 :local addrId [/ip firewall address-list find list=$listName comment=("$commentValue")]
                 # if the record id is not exist, do adding
                 :if ([:len $addrId] = 0) do={
+                    :set isAdd 1
+                } else={
+                    # Add if the currentTimeout is less than 30 minutes
+                    :local currentTimeout [/ip firewall address-list get $addrId timeout]
+                    :local hours [:pick $currentTimeout 0 2]
+                    :local minutes [:pick $currentTimeout 3 5]
+                    :local seconds [:pick $currentTimeout 6 8]
+                    :local timeoutInSecond ( ($hours * 3600) + ($minutes * 60) + $seconds )
+                    :if ($timeoutInSecond < 1800) do={
+                        :set isAdd 1
+                    }
+                }
+
+                :if ($isAdd = 1) do={
                     # Add, the record will exist in 1 day
                     /ip firewall address-list add list=$listName address=$ip timeout=$timeout comment=("$commentValue")
                     :log info ("Added $domain -> $ip to $listName with timeout $timeout")
