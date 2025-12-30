@@ -115,6 +115,7 @@ $AddResolvedIPs "google-allowed" $googleDomains "1d"
     "sgquic.wechat.com";
     "web.wechat.com";
     "web1.wechat.com";
+    "dl.wechat.com";
 }
 
 $AddResolvedIPs "wechat-allowed" $wechatDomains "1d"
