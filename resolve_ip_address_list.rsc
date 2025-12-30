@@ -97,6 +97,7 @@ $AddResolvedIPs "google-allowed" $googleDomains "1d"
 :local wechatDomains {
     "weixin.qq.com";
     "wechat.com";
+    "www.wechat.com";
     "web.wechat.com";
     "login.weixin.qq.com";
     "file.wx.qq.com";
@@ -108,7 +109,12 @@ $AddResolvedIPs "google-allowed" $googleDomains "1d"
     "short.weixin.qq.com";
     "sgminorshort.wechat.com";
     "sgshort.wechat.com";
+    "sglong.wechat.com";
     "dns.wechat.com";
+    "sgreport.wechat.com";
+    "sgquic.wechat.com";
+    "web.wechat.com";
+    "web1.wechat.com";
 }
 
 $AddResolvedIPs "wechat-allowed" $wechatDomains "1d"
