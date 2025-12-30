@@ -105,7 +105,10 @@ $AddResolvedIPs "google-allowed" $googleDomains "1d"
     "szmmsns.qpic.cn";
     "mp.weixin.qq.com";
     "res.wx.qq.com";
-    "short.weixin.qq.com"
+    "short.weixin.qq.com";
+    "sgminorshort.wechat.com";
+    "sgshort.wechat.com";
+    "dns.wechat.com";
 }
 
 $AddResolvedIPs "wechat-allowed" $wechatDomains "1d"
