@@ -11,30 +11,80 @@
 # === Configuration Data ===
 :local lists {
     "chatgpt-allowed"={
-        "chat.openai.com"; "chatgpt.com"; "platform.openai.com"; "api.openai.com";
-        "auth.openai.com"; "auth0.openai.com"; "ai.com"; "static.oaistatic.com";
-        "cdn.oaistatic.com"; "challenges.cloudflare.com"; "arkoselabs.com";
-        "stripe.com"; "files.oaiusercontent.com"; "chatgpt.livekit.cloud";
-        "oaistatic.com"; "oaiusercontent.com"; "statsig.com"; "featuregates.org"
+        "chat.openai.com";
+        "chatgpt.com";
+        "platform.openai.com";
+        "api.openai.com";
+        "auth.openai.com";
+        "auth0.openai.com";
+        "ai.com";
+        "static.oaistatic.com";
+        "cdn.oaistatic.com";
+        "challenges.cloudflare.com";
+        "arkoselabs.com";
+        "stripe.com";
+        "files.oaiusercontent.com";
+        "chatgpt.livekit.cloud";
+        "oaistatic.com";
+        "oaiusercontent.com";
+        "statsig.com";
+        "featuregates.org"
     };
     "auth-providers-allowed"={
-        "login.microsoftonline.com"; "login.live.com"; "msauth.net"; "aadcdn.msftauth.net";
-        "appleid.apple.com"; "idmsa.apple.com"; "gsa.apple.com"
+        "login.microsoftonline.com";
+        "login.live.com";
+        "msauth.net";
+        "aadcdn.msftauth.net";
+        "appleid.apple.com";
+        "idmsa.apple.com";
+        "gsa.apple.com"
     };
     "google-allowed"={
-        "google.com"; "www.google.com"; "google.com.vn"; "www.google.com.vn";
-        "accounts.google.com"; "translate.google.com"; "translate.googleapis.com";
-        "ssl.gstatic.com"; "fonts.gstatic.com"; "www.gstatic.com"; "csi.gstatic.com";
-        "ajax.googleapis.com"; "apis.google.com"
+        "google.com";
+        "www.google.com";
+        "google.com.vn";
+        "www.google.com.vn";
+        "accounts.google.com";
+        "translate.google.com";
+        "translate.googleapis.com";
+        "ssl.gstatic.com";
+        "fonts.gstatic.com";
+        "www.gstatic.com";
+        "csi.gstatic.com";
+        "ajax.googleapis.com";
+        "apis.google.com"
     };
     "wechat-allowed"={
-        "weixin.qq.com"; "wechat.com"; "www.wechat.com"; "web.wechat.com"; "wx.qq.com";
-        "login.weixin.qq.com"; "file.wx.qq.com"; "file.web.wechat.com"; "weixinbridge.com";
-        "szmwx.qpic.cn"; "szmmsns.qpic.cn"; "qlogo.cn"; "qpic.cn"; "mp.weixin.qq.com";
-        "res.wx.qq.com"; "short.weixin.qq.com"; "sgminorshort.wechat.com"; "sgshort.wechat.com";
-        "sglong.wechat.com"; "dns.wechat.com"; "sgreport.wechat.com"; "sgquic.wechat.com";
-        "web1.wechat.com"; "dl.wechat.com"; "servicewechat.com"; "mmbizurl.cn"; "mmecimage.cn";
-        "myqcloud.com"; "wechatapp.com"; "store.mp.video.tencent-cloud.com"
+        "weixin.qq.com";
+        "wechat.com";
+        "www.wechat.com";
+        "web.wechat.com";
+        "wx.qq.com";
+        "login.weixin.qq.com";
+        "file.wx.qq.com";
+        "file.web.wechat.com";
+        "weixinbridge.com";
+        "szmwx.qpic.cn";
+        "szmmsns.qpic.cn";
+        "qlogo.cn";
+        "qpic.cn";
+        "mp.weixin.qq.com";
+        "res.wx.qq.com";
+        "short.weixin.qq.com";
+        "sgminorshort.wechat.com";
+        "sgshort.wechat.com";
+        "sglong.wechat.com";
+        "dns.wechat.com";
+        "sgreport.wechat.com";
+        "sgquic.wechat.com";
+        "web1.wechat.com";
+        "dl.wechat.com";
+        "servicewechat.com";
+        "mmbizurl.cn";
+        "mmecimage.cn";
+        "myqcloud.com";
+        "wechatapp.com";
+        "store.mp.video.tencent-cloud.com"
     }
 }
 
