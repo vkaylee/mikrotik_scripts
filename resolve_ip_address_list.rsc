@@ -19,8 +19,7 @@
     };
     "auth-providers-allowed"={
         "login.microsoftonline.com"; "login.live.com"; "msauth.net"; "aadcdn.msftauth.net";
-        "appleid.apple.com"; "idmsa.apple.com"; "gsa.apple.com";
-        "facebook.com"; "fbcdn.net"; "github.com"
+        "appleid.apple.com"; "idmsa.apple.com"; "gsa.apple.com"
     };
     "google-allowed"={
         "google.com"; "www.google.com"; "google.com.vn"; "www.google.com.vn";
@@ -34,7 +33,8 @@
         "szmwx.qpic.cn"; "szmmsns.qpic.cn"; "qlogo.cn"; "qpic.cn"; "mp.weixin.qq.com";
         "res.wx.qq.com"; "short.weixin.qq.com"; "sgminorshort.wechat.com"; "sgshort.wechat.com";
         "sglong.wechat.com"; "dns.wechat.com"; "sgreport.wechat.com"; "sgquic.wechat.com";
-        "web1.wechat.com"; "dl.wechat.com"; "servicewechat.com"
+        "web1.wechat.com"; "dl.wechat.com"; "servicewechat.com"; "mmbizurl.cn"; "mmecimage.cn";
+        "myqcloud.com"; "wechatapp.com"; "store.mp.video.tencent-cloud.com"
     }
 }
 
